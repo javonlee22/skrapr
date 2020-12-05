@@ -15,7 +15,7 @@ public class SkaprUserDetailsService implements UserDetailsService {
     private UserService userService;
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String s) {
         User user = userService.getUserByUsername(s);
         if (user == null) throw new UsernameNotFoundException(s);
         return new SkaprUserDetails(user);

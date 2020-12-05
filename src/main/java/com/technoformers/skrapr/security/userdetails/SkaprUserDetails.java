@@ -11,7 +11,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 @Getter
 @Setter
@@ -19,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SkaprUserDetails implements UserDetails {
 
-    private User user;
+    private transient User user;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
